@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 
 const DB = process.env.MONGODB_URL;
 
+mongoose.set('strictQuery', true);
+
 mongoose.connect(DB).then(() => console.log('Connected to MongoDB database successfully!')).catch(err => console.log(err));
 
 const port = process.env.PORT || 3001;
